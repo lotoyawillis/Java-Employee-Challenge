@@ -156,7 +156,7 @@ class EmployeeControllerTest {
         mockMvc.perform(post("/api/v1/employee")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(employeeJson))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.firstName").value("Leon"))
                 .andExpect(jsonPath("$.lastName").value("Kennedy"))

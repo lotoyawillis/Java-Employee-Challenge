@@ -7,6 +7,7 @@ import com.challenge.api.model.EmployeeImpl;
 import com.challenge.api.service.EmployeeService;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -55,6 +56,7 @@ public class EmployeeController {
      * @throws EmployeeNotCreatedException if employee is not created
      */
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Employee createEmployee(@RequestBody EmployeeImpl requestBody) {
         return employeeService.addEmployee(requestBody);
     }
