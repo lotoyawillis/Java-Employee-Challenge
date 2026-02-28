@@ -72,7 +72,7 @@ public class GlobalExceptionHandler {
      * @return a 500 INTERNAL SERVER ERROR response with error message
      */
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, String>> handleInvalidEndpoints(Exception ex) {
+    public ResponseEntity<Map<String, String>> handleOtherException(Exception ex) {
         Map<String, String> error = new HashMap<>();
         error.put("error", ex.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
